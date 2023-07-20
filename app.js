@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
-const url = "mongodb://127.0.0.1:27017/booksDB";
+const url = "mongodb+srv://user001:test123@cluster0.dpqjq5z.mongodb.net/booksDB";
 mongoose.connect(url).then(()=>{
     console.log("connected");
 })
@@ -88,6 +88,8 @@ app.post("/add-book",upload.single("image"),async(req,res)=>{
         
     });
 });
+
+
 
 app.post("/search",async (req,res)=>{
     try{
