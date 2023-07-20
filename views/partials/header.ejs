@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/<%=style%>">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://kit.fontawesome.com/c45f99093c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo"><a href="/" >Mahesh BookShop</a></div>
+        <form class="header-search" action="/search" method="POST">
+          <input type="text" name="query" placeholder="Search">
+          <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="header-nav">
+          <a href="/add-book">Add Product</a>
+          <a href="#">Sell History</a>
+          <a href="#">Admin</a>
+        </nav>
+      </header>
+      
+  
+      
+      

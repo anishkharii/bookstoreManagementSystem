@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #666;
+    }
+
+    .form-group input[type="file"],
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #333;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input[type="file"]:focus,
+    .form-group input[type="text"]:focus,
+    .form-group input[type="number"]:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #4CAF50;
+    }
+
+    .form-group input[type="file"],
+    .form-group input[type="text"],
+    .form-group select {
+      display: inline-block;
+      width: calc(100% - 10px);
+      margin-right: 10px;
+    }
+
+    .form-group input[type="number"]{
+        width:50%
+    }
+    .form-group textarea {
+      display: inline-block;
+      width: 100%;
+      resize: vertical;
+    }
+
+     button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Add Book</h2>
+    <form method="post" action="/add-user">
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" placeholder="Select an image">
+      </div>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter the title">
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" placeholder="Enter the author's name">
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" placeholder="Enter the price">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter the quantity">
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="">Select a category</option>
+          <option value="fiction">10th</option>
+          <option value="non-fiction">12th</option>
+          <option value="sci-fi">Computers</option>
+          <option value="fantasy">History</option>
+          <option value="mystery">Commerce</option>
+          <option value="mystery">Geography</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="details">Extra Details:</label>
+        <textarea id="details" name="details" placeholder="Enter any extra details"></textarea>
+      </div>
+      <button type="submit">ADD</button>
+    </form>
+  </div>
+</body>
+</html>

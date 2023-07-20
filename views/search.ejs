@@ -1,0 +1,28 @@
+<%- include("partials/header",{style:"main.css"}) -%>
+    <h2>Search Result for: <%=query %></h2><br>
+    <div class="container">
+        
+        <% books.forEach((book)=>{%>
+            <div class="book-container">
+                <div class="title-author">
+                    <h2 class="title">
+                        <%= book.title %>
+                    </h2>
+                    <p class="author">
+                        <%= book.author %>
+                    </p>
+                    <p class="quantity">Quantity: <%=book.quantity %>
+                    </p>
+                    <p class="price">₹<%=book.price %>
+                    </p>
+                </div>
+                <img class="book-image" src="images/<%= book.imageURL %>" alt="<%=book.title %>">
+
+                <div class="buttons">
+                    <button class="sold-btn button">Sold</button>
+                    <button class="return-btn button">Returned</button>
+                </div>
+            </div>
+       <% })%>
+    </div>
+<%- include("partials/footer") -%>
