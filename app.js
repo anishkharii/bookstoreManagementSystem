@@ -82,7 +82,7 @@ app.post("/add-book",upload.single("image"),async(req,res)=>{
             title:"New Book",
             message:"Successfully Saved",
             appName:"Server says: ",
-            icon:"images/19_7_2023.jpeg"
+            icon:""
         });
         res.redirect("/");  
         
@@ -107,6 +107,6 @@ app.post("/search",async (req,res)=>{
         console.log(error);
     }
 })
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Running");
 })
