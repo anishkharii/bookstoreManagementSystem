@@ -1,7 +1,7 @@
 <%- include("partials/header",{style:"main.css"}) -%>
-    <div class="container">
+    <div class="container" >
         <% books.forEach((book)=>{ %>
-            <div class="book-container">
+            <div class="book-container" >
                 <div class="title-author">
                     <h2 class="title">
                         <%= book.title %>
@@ -16,7 +16,7 @@
                 </div>
                 <img class="book-image" src="https://raw.githubusercontent.com/anishkharii/bookstoreManagementSystem/main/public/images/<%= book.imageURL %>" alt="<%=book.title %>">
 
-                <div class="buttons">
+                <div class="buttons" >
                     <button class="sold-btn button">Sold</button>
                     <button class="return-btn button">Returned</button>
                 </div>
