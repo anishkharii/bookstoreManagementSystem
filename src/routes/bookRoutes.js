@@ -6,7 +6,6 @@ const router = express.Router();
 
 //multer configurations
 const storage = multer.diskStorage({
-    destination:"public/images",
     filename:function(req,file,cb){
         const extension = file.originalname.split('.').pop();
         const currDate = new Date();
@@ -21,6 +20,11 @@ const upload = multer({storage:storage});
 router.get('/',bookController.getAllBooks);
 router.get('/add-book',bookController.getAddBookPage);
 router.post('/add-book',upload.single("image"),bookController.addBook);
+
+router.get('/edit-book/:id',bookController.getEditBookPage);
+router.put('/edit-book/:id',upload.single('image'),bookController.editBook);
+router.delete('/edit-book/:id',bookController.deleteBook);
+
 router.post('/search',bookController.searchBooks);
 
 module.exports = router;

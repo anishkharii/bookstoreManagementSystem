@@ -30,6 +30,27 @@ const bookServices = {
             throw new Error('Error adding the book to the database');
         }
     },
+    editBook: async (bookDetails) => {
+        try{
+            console.log(bookDetails);
+            const book = await Book.findOneAndUpdate(
+                { _id: bookDetails.id },
+                {
+                    imageURL: bookDetails.imageURL,
+                    title: bookDetails.title,
+                    author: bookDetails.author,
+                    price: bookDetails.price,
+                    quantity: bookDetails.quantity,
+                    category: bookDetails.category,
+                    topic: bookDetails.topic
+                }
+            );
+            
+        }catch(err){
+            console.log(err);
+            throw new Error('Error in updating the book');
+        }  
+    },
     searchBooks:async(query)=>{
         try{
             const books = await Book.find({

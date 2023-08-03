@@ -1,4 +1,13 @@
 
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f2f2f2;
+  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+  margin: 0;
+}
+
 .form-container {
     max-width: 400px;
     margin: 10px auto;
@@ -64,6 +73,56 @@
     width: 100%;
     resize: none;
   }
+  .image-container {
+    position: relative;
+    text-align: center;
+    width: 30%;
+  }
+  
+  #image-close-btn{
+    position: absolute;
+    top: -8%;
+    right: 0%;
+    color:#787878;
+    background-color:transparent;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .book-image{
+    width:100%;
+
+  }
+
+  .delete-button {
+    background-color: #f44336;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    outline: none;
+    color:#fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  #imageDialog {
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: none;
+  }
+
   .submit-btn {
     display: block;
     width: 100%;

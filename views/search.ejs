@@ -16,12 +16,15 @@
                     <p class="price">₹<%=book.price %>
                     </p>
                 </div>
-                <img class="book-image" src="images/<%= book.imageURL %>" alt="<%=book.title %>">
+                <img class="book-image" src="<%= book.imageURL %>" alt="<%=book.title %>">
 
                 <div class="buttons">
                     <button class="sold-btn button">Sold</button>
                     <button class="return-btn button">Returned</button>
                 </div>
+                <a href="/edit-book/<%=book._id%>" class="edit-link">
+                    <i class="fas fa-edit"></i>
+                </a>
             </div>
        <% })%>
     </div>

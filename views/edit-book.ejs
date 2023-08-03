@@ -1,0 +1,61 @@
+<%- include("partials/header",{style:"add-book.css"}) -%>
+  <div class="form-container">
+
+    <h2>Edit Book</h2>
+    
+    <form method="post" style="position: relative;" action="/edit-book/<%=book._id%>?_method=DELETE">
+      <button type="submit"  class="delete-button">Delete Book</button>
+    </form>
+    <form method="post" action="/edit-book/<%=book._id%>?_method=PUT" enctype="multipart/form-data">
+      
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <div class="image-container" id="display-image">
+          <img class="book-image" src="<%=book.imageURL%>" >
+          <button type="button" id="image-close-btn"><i class="fa-solid fa-square-minus"></i></button>
+        </div> 
+      </div>
+      
+      <div class="form-group " id="image-dialog" style="display: none;">
+        <input type="file" name="image" id="image" placeholder="Select an image" >
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="<%=book.title %>" placeholder="Enter the title" required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" value="<%=book.author%>" placeholder="Enter the author's name" required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" value="<%=book.price%>" step="1" placeholder="Enter the price" required="true">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="<%=book.quantity%>" step="1" placeholder="Enter the quantity" required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" name="category" >
+          <option value="">Select a category</option>
+          <option value="10th" <%= (book.category == "10th")? "selected" : "" %>>10th</option>
+          <option value="12th" <%= book.category == "12th" ? "selected" : "" %>>12th</option>
+          <option value="Computers" <%= book.category == "Computers" ? "selected" : "" %>>Computers</option>
+          <option value="History" <%= book.category == "History" ? "selected" : "" %>>History</option>
+          <option value="Commerce" <%= book.category == "Commerce" ? "selected" : "" %>>Commerce</option>
+          <option value="Geography" <%= book.category == "Geography" ? "selected" : "" %>>Geography</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="details">Extra Details:</label>
+        <textarea id="details" name="details" value="<%=book.topic%>" placeholder="Enter any extra details"></textarea>
+      </div>
+
+      <button class="submit-btn" onsubmit="alert('Book Updated Successfully.')" type="submit">UPDATE</button>
+    </form>
+  </div>
+  <%- include("partials/footer") -%>
